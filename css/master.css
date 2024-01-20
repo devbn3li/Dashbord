@@ -13,6 +13,9 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
 }
+*:focus {
+  outline: none;
+}
 a {
   text-decoration: none;
 }
@@ -53,7 +56,7 @@ ul {
   transform: translateX(-50%);
 }
 .sidebar > h3::before {
-  width: 80px;
+  width: 100px;
   height: 2px;
   bottom: -20px;
 }
@@ -157,4 +160,61 @@ ul {
   background-color: black;
   width: 40px;
 }
+.wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
 /* end content*/
+/* start welcome widget */
+.welcome {
+  overflow: hidden;
+}
+.welcome .intro img {
+  width: 200px;
+  margin-bottom: -10px;
+}
+.welcome .avatar {
+  width: 64px;
+  height: 64px;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0 0 5px #ddd;
+  margin-left: 20px;
+  margin-top: -32px;
+}
+.welcome .body {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.welcome .body > div {
+  flex: 1;
+}
+.welcome .visit {
+  margin: 0 15px 15px auto;
+  transition: 0.3s;
+}
+.welcome .visit:hover {
+  background-color: var(--blue-alt-color);
+}
+@media (max-width: 767px) {
+  .welcome .intro {
+    padding-bottom: 30px;
+  }
+  .welcome .avatar {
+    margin-left: 0;
+  }
+  .welcome .body div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+/* end welcome widget */
